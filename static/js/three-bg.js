@@ -119,12 +119,17 @@ if (isMobile) {
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
-        70,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
+    isMobile ? 60 : 70,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
     );
-    camera.position.z = 45;
+    if (isMobile) {
+    shape.scale.set(0.6, 0.6, 0.6);
+    }
+
+    camera.position.z = isMobile ? 65 : 45;
+
 
     const renderer = new THREE.WebGLRenderer({
         canvas,
@@ -163,3 +168,29 @@ function animate(time) {
 }
     animate();
 }
+function onResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener("resize", onResize);
+window.addEventListener("orientationchange", () => {
+    setTimeout(onResize, 300);
+});
+renderer.setPixelRatio(isMobile ? 1 : window.devicePixelRatio);
+
+const camera = new THREE.PerspectiveCamera(
+    isMobile ? 60 : 70,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+);
+
+camera.position.z = isMobile ? 65 : 45;
+
+if (isMobile) {
+    shape.scale.set(0.6, 0.6, 0.6);
+}
+
+renderer.setPixelRatio(isMobile ? 1 : window.devicePixelRatio);
