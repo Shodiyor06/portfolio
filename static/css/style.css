@@ -341,3 +341,22 @@ body > *:not(canvas) {
     gap: 24px;
     flex-wrap: wrap;
 }
+.contact-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+/* faqat matn bosilishi uchun */
+.text-link {
+    color: inherit;
+    text-decoration: none;
+    pointer-events: auto;
+}
+
+/* button o‘zi bosilmasin */
+.btn {
+    pointer-events: none;
+}
