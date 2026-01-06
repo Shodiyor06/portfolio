@@ -334,29 +334,59 @@ body > *:not(canvas) {
     color: #000;
     box-shadow: 0 0 25px #7c7cff55;
 }
+
 .contact-buttons {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-.contact-buttons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 28px;
+    position: relative;
+    z-index: 20;
 }
 
-/* faqat matn bosilishi uchun */
-.text-link {
+/* umumiy tugma */
+.contact-btn {
+    padding: 14px 38px;
+    border-radius: 40px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* ichidagi link */
+.contact-btn a {
     color: inherit;
     text-decoration: none;
-    pointer-events: auto;
+    position: relative;
+    z-index: 2;
 }
 
-/* button o‘zi bosilmasin */
-.btn {
+/* glow */
+.contact-btn.glow {
+    background: linear-gradient(135deg, #7c7cff, #38bdf8);
+    color: #000;
+    box-shadow: 0 0 25px #7c7cff66;
+}
+
+/* ghost */
+.contact-btn.ghost {
+    border: 1px solid #7c7cff;
+    color: #7c7cff;
+    background: rgba(124,124,255,0.05);
+}
+
+/* hover */
+.contact-btn:hover {
+    transform: translateY(-3px);
+}
+section, header, footer {
+    position: relative;
+    z-index: 10;
+}
+#bg {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
     pointer-events: none;
 }
