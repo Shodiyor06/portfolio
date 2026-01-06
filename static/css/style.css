@@ -390,3 +390,12 @@ section, header, footer {
     z-index: -10;
     pointer-events: none;
 }
+@media (max-width: 768px) {
+    body {
+        background: radial-gradient(
+            circle at top,
+            #1a1a2e,
+            #0a0a12 70%
+        );
+    }
+}
